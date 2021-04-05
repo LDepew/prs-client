@@ -14,7 +14,7 @@ import { ProductService } from '../product.service';
 export class ProductEditComponent implements OnInit {
 
   product: Product = null;
-  vendor: Vendor = null;
+  vendors: Vendor[] = [];
 
   constructor(
     private sys: SystemService,
@@ -37,9 +37,7 @@ export class ProductEditComponent implements OnInit {
     );
   }
 
-  compFn(a: Vendor, b: Vendor): boolean {
-    return a && b && a.id === b.id;
-  }
+  
 
 
   // ngOnInit(): void {
@@ -57,10 +55,10 @@ export class ProductEditComponent implements OnInit {
 
   ngOnInit():void {
     // this.sys.chkLogin();
-    // this.vndrsvc.list().subscribe(
-    //   res => { console.debug(res); this.vendors = res; },
-    //   err => {console.error(err);}
-    // );
+    this.vndrsvc.list().subscribe(
+      res => { console.debug(res); this.vendors = res; },
+      err => {console.error(err);}
+    );
     let id = this.route.snapshot.params.id;
     this.productsvc.get(+id).subscribe(
       res => {console.debug(res); this.product = res; },

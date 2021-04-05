@@ -39,7 +39,7 @@
         <th>Vendor</th>
         <td>
             <select [{ngModel}] = "product.vendor">
-                <!-- <option *ngFor = "let vendor of vendors" [compareWith] = "compFn" [(ngvalue)] = "product.vendor">{{product.vendor.name}}</option> -->
+                <option *ngFor = "let vendor of vendors"  [ngvalue] = "vendor">{{vendor.name}}</option>
                 </select>
         </td>
         </tr>
