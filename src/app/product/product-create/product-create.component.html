@@ -31,7 +31,7 @@
             <th>Vendor</th>
             <td>
                 <select [(ngModel)] = "product.vendor">
-                    <!-- <option *ngFor = "let vendor of vendors" [(ngvalue)] = "product.vendor">{{product.vendor.name}}</option> -->
+                    <option *ngFor = "let vendor of vendors" [ngValue] = "Vendor">{{vendor.name}}</option>
                     </select>
             </td>
             </tr>
