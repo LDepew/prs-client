@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+<p>user-create works!</p>
+<div>
+    <div>
+        <span>
+            User create
+        </span>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="user.id" type="number" disabled></td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td><input [(ngModel)]="user.username" type="text" ></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input [(ngModel)]="user.password" type="password"></td>
+        </tr>
+        <tr>
+            <th>First name</th>
+            <td><input [(ngModel)]="user.firstName" type="text" ></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td><input [(ngModel)]="user.lastName" type="text" ></td>
+        </tr>
+
+        <tr>
+            <th>Phone Number</th>
+            <td><input [(ngModel)]="user.phoneNumber" type="text" ></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input [(ngModel)]="user.email" type="text" ></td>
+        </tr>
+        <tr>
+            <th>Reviewer</th>
+            <td><input [(ngModel)]="user.reviewer" type="checkbox" ></td>
+        </tr>
+        <tr>
+            <th>Admin</th>
+            <td><input [(ngModel)]="user.admin" type="checkbox" ></td>
+        </tr>
+        
+    </table>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+
+</div>

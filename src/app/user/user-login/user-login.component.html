@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <span>Login</span>
+        <div>
+            <label>Username: </label><input [(ngModel)]="user.username" type="text">
+            <label>Password: </label><input [(ngModel)]="user.password" type="password">
+            <button (click)="login()" class="btn btn-primary">Login</button>
+            <span></span>
+        </div>
+        <div class="font-weight-bold text-danger">
+            {{message}}
+        </div>
+        
+    </div>
+    
+
+</div>
