@@ -12,10 +12,6 @@
             <td><input [(ngModel)]="product.id" type="number" disabled></td>
         </tr>
         <tr>
-            <th>Vendor</th>
-            <td><input [(ngModel)]="product.vendor" type="text" disabled></td>
-        </tr>
-        <tr>
             <th>Part Number</th>
             <td><input [(ngModel)]="product.partNumber" type="text" disabled></td>
         </tr>
@@ -33,8 +29,8 @@
             <td><input [(ngModel)]="product.unit" type="text" disabled></td>
         </tr>
         <tr>
-            <th>Photo Path</th>
-            <td><input [(ngModel)]="product.photoPath" type="text" disabled></td>
+            <th>Vendor</th>
+            <td><input [(ngModel)] = "product.vendor.name" type="text" disabled></td>
         </tr>
         
     </table>

@@ -14,7 +14,7 @@ export class SearchProductPipe implements PipeTransform {
     for(let product of products) {
       if(
         product.id.toString().includes(searchCriteria.toLocaleLowerCase())
-        || product.vendor.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
+        || product.vendor.name.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || product.partNumber.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || product.name.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || product.price.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())

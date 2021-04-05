@@ -12,12 +12,6 @@
             </td>
         </tr>
         <tr>
-            <th>Vendor:</th>
-            <td>
-                <input [(ngModel)] = "product.vendor" type = "text">
-            </td>
-        </tr>
-        <tr>
             <th>Part Number:</th>
             <td>
                 <input [(ngModel)] = "product.partNumber" type = "text">
@@ -42,11 +36,13 @@
             </td>
         </tr>
         <tr>
-            <th>Photo Path:</th>
-            <td>
-                <input [(ngModel)] = "product.photoPath" type = "text">
-            </td>
+        <th>Vendor</th>
+        <td>
+            <select [{ngModel}] = "product.vendor">
+                <!-- <option *ngFor = "let vendor of vendors" [compareWith] = "compFn" [(ngvalue)] = "product.vendor">{{product.vendor.name}}</option> -->
+                </select>
+        </td>
         </tr>
     </table>
-    <button (click) = "save()" class = "btn btn-primary">Save</button>
+    <button (click) = "save()" class = "btn btn-primary btn-sm">Save</button>
 </div>

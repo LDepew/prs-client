@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from 'src/app/system.service';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -13,6 +14,7 @@ export class ProductListComponent implements OnInit {
   searchCriteria: string = "";
 
   constructor(
+    private sys: SystemService,
     private productsvc: ProductService
   ) { }
 
