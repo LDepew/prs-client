@@ -14,9 +14,13 @@ export class SearchVendorPipe implements PipeTransform {
     for(let vendor of vendors) {
       if(
         vendor.id.toString().includes(searchCriteria.toLocaleLowerCase())
+        || vendor.code.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || vendor.name.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
-        || (vendor.email != null && 
-           vendor.email.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase()))
+        || vendor.address.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
+        || vendor.city.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
+        || vendor.state.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
+        || vendor.zip.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
+        || vendor.email.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || vendor.phone.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase()))
          {
         selectedVendors.push(vendor);
