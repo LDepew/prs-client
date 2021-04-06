@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+<p>request-detail works!</p>
+<div>
+    <div>
+        <span>
+            Request detail
+        </span>
+    </div>
+    <table class="table table-sm" *ngIf="request">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="request.id" type="number" disabled></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><input [(ngModel)]="request.description" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Rejection Reason</th>
+            <td><input [(ngModel)]="request.rejectionReason" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td><input [(ngModel)]="request.status" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td><input [(ngModel)]="request.total" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>User</th>
+            <td><input [(ngModel)] = "request.username" type="text" disabled></td>
+        </tr>
+    </table>
+    <button (click)="edit()" class="btn btn-warning">Edit</button> | 
+    <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerify"> |
+        <button (click)="delete()" class="btn btn-danger">Confirm?</button>
+    </span>
+</div>
