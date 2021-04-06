@@ -38,11 +38,12 @@
         <tr>
         <th>User:</th>
         <td>
-            <select [{ngModel}] = "product.vendor">
-                <option *ngFor = "let vendor of vendors"  [ngvalue] = "vendor" disabled>{{vendor.name}}</option>
-                </select>
+            <input [{ngModel}] = "request.username" [ngvalue] = "vendor">
+                <!-- <option *ngFor = "let vendor of vendors"  [ngvalue] = "vendor" disabled>{{vendor.name}}</option> -->
+                
         </td>
         </tr>
     </table>
+    
     <button (click) = "save()" class = "btn btn-primary btn-sm">Save</button>
 </div>

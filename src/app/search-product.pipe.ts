@@ -17,8 +17,6 @@ export class SearchProductPipe implements PipeTransform {
         || product.vendor.name.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || product.partNumber.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || product.name.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
-        || product.price.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
-        || product.unit.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         ) {
         selectedProducts.push(product);
       }

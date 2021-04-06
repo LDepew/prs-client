@@ -7,30 +7,25 @@
     </div>
     <table class = "table table-sm">
         <tr>
-            <th>User</th>
+            <th>Id</th>
             <th>Description</th>
-            <th>Justification</th>
-            <th>Date Needed</th>
-            <th>Delivery Mode</th>
+            <th>Rejection Reason</th>
             <th>Status</th>
             <th>Total</th>
-            <th>Submitted Date</th>
-            <th>Reason For Rejection</th>
+            <th>User</th>
             <th>Actions</th>
         </tr>
         <tr *ngFor = "let request of requests | searchRequest:searchCriteria">
-            <td>{{request.user}}</td>
+            <td>{{request.id}}</td>
             <td>{{request.description}}</td>
-            <td>{{request.justification}}</td>
-            <td>{{request.dateNeeded}}</td>
-            <td>{{request.deliveryMode}}</td>
+            <td>{{request.reasonForRejection}}</td>
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
-            <td>{{request.submittedDate}}</td>
-            <td>{{request.reasonForRejection}}</td>
+            <td>{{request.user}}</td>
             <td>
                 <a routerLink = "/requests/detail/{{request.id}}">Detail</a> |
-                <a routerLink = "/requests/edit/{{request.id}}">Edit</a>
+                <a routerLink = "/requests/edit/{{request.id}}">Edit</a> |
+                <a routerLink = "/requests/requestlines/{{request.id}}">Lines</a>
             </td>
         </tr>
 

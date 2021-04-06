@@ -1,4 +1,3 @@
-import { Vendor } from "../vendor/vendor.class";
 
 export class Request {
     id: number = 0;
@@ -7,7 +6,5 @@ export class Request {
     status: string = '';
     total: string = '';
     username: string = '';
-    vendorid: number = 0;
-    vendor: Vendor = null;
-    vendorName: string = '';
+    
   }
