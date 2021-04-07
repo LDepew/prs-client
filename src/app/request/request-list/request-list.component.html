@@ -21,7 +21,7 @@
             <td>{{request.reasonForRejection}}</td>
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
-            <td>{{request.user}}</td>
+            <td>{{request.user.username}}</td>
             <td>
                 <a routerLink = "/requests/detail/{{request.id}}">Detail</a> |
                 <a routerLink = "/requests/edit/{{request.id}}">Edit</a> |

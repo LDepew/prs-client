@@ -36,12 +36,8 @@
             </td>
         </tr>
         <tr>
-        <th>User:</th>
-        <td>
-            <input [{ngModel}] = "request.username" [ngvalue] = "vendor">
-                <!-- <option *ngFor = "let vendor of vendors"  [ngvalue] = "vendor" disabled>{{vendor.name}}</option> -->
-                
-        </td>
+            <th>User</th>
+            <td><input [(ngModel)] = "request.user.username" type="text" disabled></td>
         </tr>
     </table>
     
