@@ -18,26 +18,30 @@
             </td>
         </tr>
         <tr>
-            <th>Rejection Reason:</th>
+            <th>Justification:</th>
             <td>
-                <input [(ngModel)] = "request.rejectionReason" type = "text" disabled>
+                <input [(ngModel)] = "request.justification" type = "text">
             </td>
         </tr>
         <tr>
-            <th>Status:</th>
+            <th>Date Needed:</th>
             <td>
-                <input [(ngModel)] = "request.status" type = "text" disabled>
+                <input [(ngModel)] = "request.dateNeeded" type = "text">
             </td>
         </tr>
         <tr>
-            <th>Total:</th>
+            <th>Delivery Mode:</th>
             <td>
-                <input [(ngModel)] = "request.total" type = "text" disabled>
+                <input [(ngModel)] = "request.deliveryMode" type = "text">
             </td>
         </tr>
         <tr>
-            <th>User</th>
-            <td><input [(ngModel)] = "request.user.username" type="text" disabled></td>
+            <th>Status</th>
+            <td><input [(ngModel)] = "request.status" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td><input [(ngModel)] = "request.total" type="text" disabled></td>
         </tr>
     </table>
     

@@ -6,6 +6,7 @@
     <span><input [(ngModel)] = "searchCriteria" type = "text" placeholder = "search"></span>
     </div>
     <table class = "table table-sm">
+        <thead>
         <tr>
             <th>Id</th>
             <th>Description</th>
@@ -15,6 +16,8 @@
             <th>User</th>
             <th>Actions</th>
         </tr>
+        </thead>
+        <tbody>
         <tr *ngFor = "let request of requests | searchRequest:searchCriteria">
             <td>{{request.id}}</td>
             <td>{{request.description}}</td>
@@ -28,6 +31,6 @@
                 <a routerLink = "/requests/lines/{{request.id}}">Lines</a>
             </td>
         </tr>
-
+        </tbody>
     </table>
 </div>

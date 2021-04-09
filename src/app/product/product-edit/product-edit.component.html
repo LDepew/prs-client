@@ -12,6 +12,14 @@
             </td>
         </tr>
         <tr>
+        <th>Vendor</th>
+        <td>
+            <select [{ngModel}] = "product.vendor">
+                <option *ngFor = "let vendor of vendors"  [ngvalue] = "vendor">{{vendor.name}}</option>
+                </select>
+        </td>
+        </tr>
+        <tr>
             <th>Part Number:</th>
             <td>
                 <input [(ngModel)] = "product.partNumber" type = "text">
@@ -34,14 +42,6 @@
             <td>
                 <input [(ngModel)] = "product.unit" type = "text">
             </td>
-        </tr>
-        <tr>
-        <th>Vendor</th>
-        <td>
-            <select [{ngModel}] = "product.vendor">
-                <option *ngFor = "let vendor of vendors"  [ngvalue] = "vendor">{{vendor.name}}</option>
-                </select>
-        </td>
         </tr>
     </table>
     <button (click) = "save()" class = "btn btn-primary btn-sm">Save</button>

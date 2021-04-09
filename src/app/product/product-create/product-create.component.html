@@ -6,11 +6,19 @@
             Product create
         </span>
     </div>
-    <table class="table table-sm">
+    <table class="table table-sm" *ngIf = "product">
         <tr>
             <th>Id</th>
-            <td><input [(ngModel)]="product.id" type="number" disabled></td>
+            <td><input [(ngModel)]="product.id" type="number" value = 0 disabled></td>
         </tr>
+        <tr>
+            <th>Vendor</th>
+            <td>
+                <select [(ngModel)] = "product.vendor">
+                    <option *ngFor = "let vendor of vendors" [ngValue] = "vendor">{{vendor.name}}</option>
+                    </select>
+            </td>
+            </tr>
         <tr>
             <th>Part Number</th>
             <td><input [(ngModel)]="product.partNumber" type="text"></td>
@@ -21,21 +29,12 @@
         </tr>
         <tr>
             <th>Price</th>
-            <td><input [(ngModel)]="product.price" type="text" ></td>
+            <td><input [(ngModel)]="product.price" type="number" ></td>
         </tr>
         <tr>
             <th>Unit</th>
             <td><input [(ngModel)]="product.unit" type="text" ></td>
-        </tr>
-        <tr>
-            <th>Vendor</th>
-            <td>
-                <select [(ngModel)] = "product.vendor">
-                    <option *ngFor = "let vendor of vendors" [ngValue] = "Vendor">{{vendor.name}}</option>
-                    </select>
-            </td>
-            </tr>
-        
+        </tr>        
     </table>
     <button (click)="save()" class="btn btn-primary">Save</button>
 

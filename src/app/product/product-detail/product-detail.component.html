@@ -12,6 +12,10 @@
             <td><input [(ngModel)]="product.id" type="number" disabled></td>
         </tr>
         <tr>
+            <th>Vendor</th>
+            <td><input [(ngModel)] = "product.vendor.name" type="text" disabled></td>
+        </tr>
+        <tr>
             <th>Part Number</th>
             <td><input [(ngModel)]="product.partNumber" type="text" disabled></td>
         </tr>
@@ -27,12 +31,7 @@
         <tr>
             <th>Unit</th>
             <td><input [(ngModel)]="product.unit" type="text" disabled></td>
-        </tr>
-        <tr>
-            <th>Vendor</th>
-            <td><input [(ngModel)] = "product.vendor.name" type="text" disabled></td>
-        </tr>
-        
+        </tr>        
     </table>
     <button (click)="edit()" class="btn btn-warning">Edit</button> | 
     <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>

@@ -12,12 +12,24 @@
             <td><input [(ngModel)]="request.id" type="number" disabled></td>
         </tr>
         <tr>
+            <th>User</th>
+            <td><input [(ngModel)] = "request.user.username" type="text" disabled></td>
+        </tr>
+        <tr>
             <th>Description</th>
             <td><input [(ngModel)]="request.description" type="text" disabled></td>
         </tr>
         <tr>
-            <th>Rejection Reason</th>
-            <td><input [(ngModel)]="request.rejectionReason" type="text" disabled></td>
+            <th>Justification</th>
+            <td><input [(ngModel)]="request.justification" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Date Needed</th>
+            <td><input [(ngModel)]="request.dateNeeded" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Delivery Mode</th>
+            <td><input [(ngModel)]="request.deliveryMode" type="text" disabled></td>
         </tr>
         <tr>
             <th>Status</th>
@@ -28,13 +40,17 @@
             <td><input [(ngModel)]="request.total" type="text" disabled></td>
         </tr>
         <tr>
-            <th>User</th>
-            <td><input [(ngModel)] = "request.user.username" type="text" disabled></td>
+            <th>Submitted Date</th>
+            <td><input [(ngModel)]="request.submittedDate" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Reason For Rejection</th>
+            <td><input [(ngModel)]="request.reasonForRejection" type="text" disabled></td>
         </tr>
     </table>
     <button (click)="edit()" class="btn btn-warning">Edit</button> | 
-    <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
+    <button (click)="toggleVerify()" class="btn btn-danger">Delete</button> 
     <span *ngIf="showVerify"> |
         <button (click)="delete()" class="btn btn-danger">Confirm?</button>
-    </span>
+    </span> 
 </div>

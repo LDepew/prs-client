@@ -16,7 +16,7 @@ export class SearchRequestPipe implements PipeTransform {
         request.id.toString().includes(searchCriteria.toLocaleLowerCase())
         || request.description.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         || request.status.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
-        || request.username.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
+        // || request.user.toLocaleLowerCase().includes(searchCriteria.toLocaleLowerCase())
         ) {
         selectedRequests.push(request);
       }

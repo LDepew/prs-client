@@ -30,6 +30,9 @@ import { SearchRequestPipe } from './search-request.pipe';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { LineItemComponent } from './line-item/line-item.component';
+import { RequestLinesCreateComponent } from './request/request-lines/request-lines-create/request-lines-create.component';
+import { RequestLinesEditComponent } from './request/request-lines/request-lines-edit/request-lines-edit.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 
 @NgModule({
@@ -61,6 +64,9 @@ import { RequestLinesComponent } from './request/request-lines/request-lines.com
     RequestCreateComponent,
     RequestEditComponent,
     RequestLinesComponent,
+    LineItemComponent,
+    RequestLinesEditComponent,
+    RequestLinesCreateComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
