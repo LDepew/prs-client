@@ -1,0 +1,28 @@
+<!-- <p>review-list works!</p> -->
+<div>
+    <h3>Review List</h3>
+<table class = "table table-sm">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let request of processedRequests">
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.user.username}}</td>
+        <td>
+            <a routerLink = "/reviews/detail/{{request.id}}">Review</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>

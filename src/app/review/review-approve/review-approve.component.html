@@ -1,7 +1,7 @@
 <app-menu></app-menu>
-<!-- <p>request-lines works!</p> -->
+<!-- <p>request-approve works!</p> -->
 <div>
-    <h3>Request</h3>
+    <h3>Review Request</h3>
     <table class = "table table-sm">
         <thead>
         <tr>
@@ -10,7 +10,6 @@
             <th>Status</th>
             <th>Total</th>
             <th>User</th>
-            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -20,38 +19,33 @@
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
             <td>{{request.user.username}}</td>
-            <td>
-                <button class = "btn btn-link" (click) = "submit()">Review</button>
-            </td>
         </tr>
         </tbody>
     </table>
 <hr>
-<h4>Request Line Items</h4> | <a routerLink ="/requests/lines/create/{{request.id}}">Create</a>
+<h4>Request Line Items</h4> | <a routerLink ="/requests/lines/create/{{request}}">Create</a>
 <table class = "table table-sm">
     <thead>
     <tr>
         <th>Id</th>
-        <th>Product</th>
+        <th>Description</th>
         <th>Quantity</th>
         <th>Price</th>
         <th>Line Total</th>
-        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let lineItem of lineItems">
-            <td>{{lineItem.id}}</td>
+            <td>{{lineItem.product.id}}</td>
             <td>{{lineItem.product.name}}</td>
             <td>{{lineItem.quantity}}</td>
             <td>{{lineItem.product.price}}</td>
             <td>{{lineItem.product.price * lineItem.quantity}}</td>
-            <td>
-                <a routerLink = "/requests/lines/edit/{{lineItem.id}}">Edit</a>
-                <button class = "btn btn-link" (click) = "delete(lineItem)">Delete</button>
-            </td>
         </tr>
     </tbody>
 </table>
-<button class = "btn btn-primary" (click) = "submit()">Submit for Review</button>
+<button class = "btn btn-primary" (click) = "approve()">Approve</button> | 
+<button class = "btn btn-danger" (click) = "reject()">Reject</button>
+<input type = "text" *ngIf = "showRejectionReason" [(ngModel)] = "request.rejectionReason">
+<button class = "btn btn-link" (click) = "confirm()">Confirm</button>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
+import { SystemService } from 'src/app/system.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class RequestDetailComponent implements OnInit {
   constructor(
     private requestsvc: RequestService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sys: SystemService
   ) { }
 
   toggleVerify(): void {
@@ -42,6 +44,7 @@ export class RequestDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sys.validateLogin(this.sys.loggedInUser);
     this.id = this.route.snapshot.params.id;
     this.requestsvc.get(+this.id).subscribe(
       res => {

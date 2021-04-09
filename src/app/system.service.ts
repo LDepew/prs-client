@@ -9,17 +9,29 @@ import { User } from './user/user.class';
 export class SystemService {
 
   loggedInUser: User = null;
+  admin: boolean = false;
+  reviewer: boolean = false;
 
   constructor(
     private router: Router
   ) { }
 
 
-chkLogin(): void {
+validateLogin(loggedInUser: User): void {
   if(this.loggedInUser == null) {
-    //this.router.navigatedbyUrl('/login');
+    this.router.navigateByUrl('/login');
     console.warn("Check for login disabled!");
   }
+}
 
+
+
+validateCredentials(loggedInUser: User){
+  if(this.loggedInUser.reviewer == true){
+    this.reviewer = true;
+  }
+  if(this.loggedInUser.admin == true){
+    this.admin = true;
+  }
 }
 }

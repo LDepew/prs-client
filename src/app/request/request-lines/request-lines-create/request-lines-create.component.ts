@@ -28,12 +28,22 @@ export class RequestLinesCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // this.sys.validateLogin(this.sys.loggedInUser);
     this.reqId = this.route.snapshot.params.reqId;
         console.log(this.reqId);
         this.requestsvc.get(this.reqId).subscribe(
           res => {
             console.log("Request by Id: ", res);
             this.lineItem.request = res;
+          },
+          err => {
+            console.error(err);
+          }
+        );
+        this.productsvc.list().subscribe(
+          res => {
+            console.log("Products:", res);
+            this.products = res;
           },
           err => {
             console.error(err);
@@ -47,6 +57,9 @@ export class RequestLinesCreateComponent implements OnInit {
         console.log("Create Line Item:", res);
         this.lineItem = res;
         this.router.navigateByUrl(`/requests/lines/${this.reqId}`);
+      },
+      err => {
+        console.error(err);
       }
     );
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '../system.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  username: string;
 
   menus: any[] = [
     { display: 'Home', route: '/home' },
@@ -13,13 +15,18 @@ export class MenuComponent implements OnInit {
     { display: 'Vendors', route: '/vendors/list'},
     { display: 'Products', route: '/products/list'},
     { display: 'Requests', route: '/requests/list'},
+    { display: 'Reviews', route: '/reviews/list'},
     { display: 'About', route: '/about' },
     { display: 'Login', route: '/login' }
   ]
 
-  constructor() { }
+  constructor(
+    private sys: SystemService
+  ) { }
 
   ngOnInit(): void {
+    this.sys.validateLogin(this.sys.loggedInUser);
+    this.username = this.sys.loggedInUser.firstName;
   }
 
 }

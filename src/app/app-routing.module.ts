@@ -19,9 +19,11 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
-import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestLinesEditComponent } from './request/request-lines/request-lines-edit/request-lines-edit.component';
 import { RequestLinesCreateComponent } from './request/request-lines/request-lines-create/request-lines-create.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { ReviewListComponent } from './review/review-list/review-list.component';
+import { ReviewApproveComponent } from './review/review-approve/review-approve.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,8 @@ const routes: Routes = [
   {path: 'requests/lines/:id', component: RequestLinesComponent},
   {path: 'requests/lines/edit/:id', component: RequestLinesEditComponent},
   {path: 'requests/lines/create/:reqId', component: RequestLinesCreateComponent},
+  {path: 'reviews/list', component: ReviewListComponent},
+  {path: 'reviews/detail/:id', component: ReviewApproveComponent},
   { path: '**', component: HomeComponent }
   ];
 

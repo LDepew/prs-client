@@ -33,4 +33,20 @@ export class RequestService {
           remove(request: Request): Observable<Request>{
           return this.http.delete(`${this.baseurl}/${request.id}`) as Observable<Request>;
           }
+
+          submitReview(request: Request): Observable<Request>{
+            return this.http.put(`${this.baseurl}/submit-review`, request) as Observable<Request>
+          }
+
+          getReview(id): Observable<Request[]>{
+            return this.http.get(`${this.baseurl}list-review/${id}`) as Observable<Request[]>
+          }
+
+          approve(request: Request): Observable<Request>{
+            return this.http.put(`${this.baseurl}approve`, request) as Observable<Request>
+          }
+
+          reject(request: Request): Observable<Request>{
+            return this.http.put(`${this.baseurl}reject`, request) as Observable<Request>
+          }
 }

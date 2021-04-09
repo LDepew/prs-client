@@ -25,7 +25,7 @@ export class ProductCreateComponent implements OnInit {
     ) { }
     
     ngOnInit():void {
-    // this.sys.chkLogin();
+    this.sys.validateLogin(this.sys.loggedInUser);
     this.vndrsvc.list().subscribe(
       res => {
         console.log("Vendor list:", res);

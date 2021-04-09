@@ -27,42 +27,57 @@ export class RequestLinesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params.id;
-    this.requestsvc.get(this.id).subscribe(
-      res => {
-        console.log(res);
-        this.request = res;  
-      },
-      err => {
-        console.error(err);
-      }
-    );
-    this.rqlinesvc.listByRequestId(this.id).subscribe(
-      res => {
-        console.log("Line items for request id: ", res);
-        this.lineItems = res;
-      }
-    );
+    // this.sys.validateLogin(this.sys.loggedInUser);
+    this.refresh();
   }
-  
-  delete(id): void {
-    console.log("ID in:",id);
-    this.rqlinesvc.get(id).subscribe(
-      res => {
-        console.log("request ID", res);
-        this.lineItem = res;
-      },
-      err => {
-        console.error(err);
-      }
-    );
-    this.rqlinesvc.remove(this.lineItem).subscribe(
+
+  delete(lineItem): void {
+    this.rqlinesvc.remove(lineItem).subscribe(
       res => {
         console.log("Line item delete:", res);
+        this.refresh();
       },
       err => {
         console.error(err);
       }
     );
   }
+
+  
+
+    refresh(): void {
+      this.id = this.route.snapshot.params.id;
+      this.requestsvc.get(this.id).subscribe(
+        res => {
+          console.log(res);
+          this.request = res;
+        },
+        err => {
+          console.error(err);
+        }
+      );
+      this.rqlinesvc.listByRequestId(this.id).subscribe(
+        res => {
+          console.log("Line items for request:" , res);
+          this.lineItems = res;
+        }
+      )
+    }
+
+  
+    submit(): void {
+      this.requestsvc.submitReview(this.request).subscribe(
+        res => {
+        console.log("Request submitted for review:", res);
+        this.request = res;
+        this.refresh();
+        this.router.navigateByUrl('/requests/list');
+      },
+      err => {
+        console.error(err);
+      }
+      )
+    }
+  
   }
+  

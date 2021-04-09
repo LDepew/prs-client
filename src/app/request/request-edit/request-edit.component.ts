@@ -13,6 +13,7 @@ import { RequestService } from '../request.service';
 })
 export class RequestEditComponent implements OnInit {
 
+  id: number = 0;
   request: Request = null;
   vendors: Vendor[] = [];
 
@@ -37,24 +38,8 @@ export class RequestEditComponent implements OnInit {
     );
   }
 
-  
-
-
-  // ngOnInit(): void {
-  //   let id = this.route.snapshot.params.id;
-  //   this.productsvc.get(+id).subscribe(
-  //     res => {
-  //       console.log("Product: ", res)
-  //       this.product = res;
-  //     },
-  //     err => {
-  //       console.error(err);
-  //     }
-  //   );
-  // }
-
   ngOnInit():void {
-    // this.sys.chkLogin();
+    this.sys.validateLogin(this.sys.loggedInUser);
     this.vndrsvc.list().subscribe(
       res => { console.debug(res); this.vendors = res; },
       err => {console.error(err);}

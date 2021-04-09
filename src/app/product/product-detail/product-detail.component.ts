@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
+import { SystemService } from 'src/app/system.service';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private productsvc: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sys: SystemService
   ) { }
 
   toggleVerify(): void {
@@ -42,6 +44,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sys.validateLogin(this.sys.loggedInUser);
     this.id = this.route.snapshot.params.id;
     this.productsvc.get(+this.id).subscribe(
       res => {

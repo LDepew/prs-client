@@ -1,8 +1,8 @@
 <app-menu></app-menu>
-<p>request-lines-create works!</p>
+<!-- <p>request-lines-create works!</p> -->
 <div>
     <div>
-        <span>Request Lines Create</span>
+        <h3>Request Lines Create</h3>
     </div>
     <table  class = "table table-sm" *ngIf = "lineItem">
         <tr>
@@ -14,7 +14,7 @@
         <tr>
             <th>Product:</th>
                 <select [(ngModel)] = "lineItem.product" [compareWith] = "compFn">
-                    <option  *ngFor = "let product of products" [ngValue] = "product">{{products.name}}</option>
+                    <option  *ngFor = "let product of products" [ngValue] = "product">{{product.name}}</option>
             </select>
         </tr>
         <tr>
@@ -25,5 +25,5 @@
         </tr>
     </table>
     
-    <button (click) = "save()" class = "btn btn-primary btn-sm">Save</button>
+    <button (click) = "save()" class = "btn btn-primary">Save</button>
 </div>

@@ -37,24 +37,8 @@ export class ProductEditComponent implements OnInit {
     );
   }
 
-  
-
-
-  // ngOnInit(): void {
-  //   let id = this.route.snapshot.params.id;
-  //   this.productsvc.get(+id).subscribe(
-  //     res => {
-  //       console.log("Product: ", res)
-  //       this.product = res;
-  //     },
-  //     err => {
-  //       console.error(err);
-  //     }
-  //   );
-  // }
-
   ngOnInit():void {
-    // this.sys.chkLogin();
+    this.sys.validateLogin(this.sys.loggedInUser);
     this.vndrsvc.list().subscribe(
       res => { console.debug(res); this.vendors = res; },
       err => {console.error(err);}
@@ -64,6 +48,10 @@ export class ProductEditComponent implements OnInit {
       res => {console.debug(res); this.product = res; },
       err=> {console.error(err);}
     )
+  }
+
+  compFn(a: Vendor, b: Vendor): boolean {
+    return a && b && a.id === b.id;
   }
 
 }

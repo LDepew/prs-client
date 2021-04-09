@@ -16,26 +16,31 @@ export class RequestLinesService {
     ) { }
 
     listByRequestId(id: number): Observable<LineItem[]> {
-      return this.http.get(`${this.baseurl}lines/${id}`) as Observable<LineItem[]>
+      return this.http.get(`${this.baseurl}lines-for-pr/${id}`) as Observable<LineItem[]>
     }
     
     list(): Observable<LineItem[]> {
-      return this.http.get(`${this.baseurl}`) as Observable<LineItem[]>;
+      return this.http.get(`${this.baseurl}`) as Observable<LineItem[]>
           }
 
-    get(id: number): Observable<LineItem>{
-      return this.http.get(`${this.baseurl}/${id}`) as Observable<LineItem>;
+    get(id): Observable<LineItem>{
+      return this.http.get(`${this.baseurl}${id}`) as Observable<LineItem>
           }
 
           create(lineItem: LineItem): Observable<LineItem>{
-      return this.http.post(`${this.baseurl}`, lineItem) as Observable<LineItem>;
+      return this.http.put(`${this.baseurl}`, lineItem) as Observable<LineItem>
           }
 
           change(lineItem: LineItem): Observable<LineItem>{
-      return this.http.put(`${this.baseurl}`, lineItem) as Observable<LineItem>;
+      return this.http.post(`${this.baseurl}`, lineItem) as Observable<LineItem>
           }
 
           remove(lineItem: LineItem): Observable<LineItem>{
-          return this.http.delete(`${this.baseurl}/${lineItem.id}`) as Observable<LineItem>;
+          return this.http.delete(`${this.baseurl}${lineItem.id}`) as Observable<LineItem>
           }
+
+          recalculate(lineItem: LineItem): Observable<LineItem>{
+            return this.http.post(`${this.baseurl}`, lineItem) as Observable<LineItem>
+          }
+
 }

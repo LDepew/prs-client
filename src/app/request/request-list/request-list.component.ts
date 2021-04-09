@@ -21,7 +21,7 @@ export class RequestListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.sys.chkLogin();
+    this.sys.validateLogin(this.sys.loggedInUser);
     this.requestsvc.list().subscribe(
       res => {
         console.log("Request:", res)

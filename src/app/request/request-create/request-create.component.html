@@ -1,15 +1,13 @@
 <app-menu></app-menu>
-<p>request-create works!</p>
+<!-- <p>request-create works!</p> -->
 <div>
     <div>
-        <span>
-            Request create
-        </span>
+        <h3>Request Create</h3>
     </div>
     <table class="table table-sm" *ngIf = "request">
         <tr>
             <th>Id</th>
-            <td><input [(ngModel)]="request.user.id" type="number"></td>
+            <td><input [(ngModel)]="request.id" type="number" disabled></td>
         </tr>
         <tr>
             <th>Description</th>
