@@ -15,7 +15,7 @@ export class ReviewApproveComponent implements OnInit {
   request: Request = new Request;
   lineItems: LineItem[];
   id: number = 0;
-  showRejectionReason: boolean = false;
+  showReasonForRejection: boolean = false;
 
   constructor(
     private sys: SystemService,
@@ -84,7 +84,7 @@ export class ReviewApproveComponent implements OnInit {
   }
 
   toggleVerify(): void {
-    this.showRejectionReason = !this.showRejectionReason;
+    this.showReasonForRejection = !this.showReasonForRejection;
   }
 
 }

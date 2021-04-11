@@ -10,6 +10,6 @@ export class Request {
     status: string = '';
     total: string = '';
     submittedDate: string = (new Date()).toISOString();
-    rejectionReason: string = '';
+    reasonForRejection: string = '';
     
   }
