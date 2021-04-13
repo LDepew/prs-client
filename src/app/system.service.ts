@@ -11,6 +11,7 @@ export class SystemService {
   loggedInUser: User = null;
   admin: boolean = false;
   reviewer: boolean = false;
+  // get Admin() {return this.loggedInUser != null &&  this.loggedInUser.admin; }
 
   constructor(
     private router: Router
